@@ -2,7 +2,7 @@ apt-get install gnupg2 add-apt-key -y
 echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/php7.x.list
 apt-get update && apt-get upgrade -y 
 # install Required Dependencies
-apt-get install -y build-essential linux-headers-`uname -r` openssh-server apache2 mariadb-server\
+apt-get install -y linux-image build-essential linux-headers-`uname -r` openssh-server apache2 mariadb-server\
   mariadb-client bison flex php7.4 php7.4-curl php7.4-cli php7.4-common php7.4-mysql php7.4-gd php7.4-mbstring\
   php7.4-intl php7.4-xml php-pear curl sox libncurses5-dev libssl-dev mpg123 libxml2-dev libnewt-dev sqlite3\
   libsqlite3-dev pkg-config automake libtool autoconf git unixodbc-dev uuid uuid-dev\
@@ -11,7 +11,7 @@ apt-get install -y build-essential linux-headers-`uname -r` openssh-server apach
 # Install nodejs
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install -y nodejs 
-
+read -p "reboot CTRL-c to cancel" && reboot
 # install MariaDB ODBC
 
 cd /usr/src/
