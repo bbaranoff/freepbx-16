@@ -1,6 +1,4 @@
 apt-get install gnupg2 add-apt-key -y
-wget -qO - https://packages.sury.org/php/apt.gpg | sudo apt-key add -
-# install the SURY Repository and Update  your system packages
 echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/php7.x.list
 apt-get update && apt-get upgrade -y 
 # install Required Dependencies
@@ -27,13 +25,8 @@ cd /usr/src
 wget http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-16-current.tar.gz
 # Compile and install DAHDI.
 # If you don't have any physical PSTN hardware attached to this machine, you don't need to install DAHDI.(For example, a T1 or E1 card, or a USB device). Most smaller setups will not have DAHDI hardware, and this step can be safely skipped.
-
-
-
 wget http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-current.tar.gz
 wget http://downloads.asterisk.org/pub/telephony/libpri/libpri-current.tar.gz
-
-
 cd /usr/src
 tar xvfz dahdi-linux-complete-current.tar.gz
 rm -f dahdi-linux-complete-current.tar.gz
